@@ -143,6 +143,22 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    if (hazard_mode) {
+      toggle_all_leds();
+      HAL_Delay(500); // 500ms delay for blinking
+    }
+    else if (left_mode) {
+      toggle_left_leds();
+      HAL_Delay(500);
+    }
+    else if (right_mode) {
+      toggle_right_leds();
+      HAL_Delay(500);
+    }
+    else {
+      set_left_leds(GPIO_PIN_RESET);
+      set_right_leds(GPIO_PIN_RESET);
+    }
   }
   /* USER CODE END 3 */
 }
