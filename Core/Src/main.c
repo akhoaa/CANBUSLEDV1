@@ -24,7 +24,38 @@
 volatile uint8_t hazard_mode = 0;
 volatile uint8_t left_mode = 0;
 volatile uint8_t right_mode = 0;
+/* USER CODE END Includes */
 
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+
+/* USER CODE BEGIN PV */
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+void toggle_left_leds(void);
+void toggle_right_leds(void);
+void toggle_all_leds(void);
+void set_left_leds(GPIO_PinState state);
+void set_right_leds(GPIO_PinState state);
+/* USER CODE BEGIN PFP */
 void toggle_left_leds(void) {
   HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0);
   HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_1);
@@ -68,39 +99,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     left_mode = 0;
   }
 }
-/* USER CODE END Includes */
-
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
-
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
-void toggle_left_leds(void);
-void toggle_right_leds(void);
-void toggle_all_leds(void);
-void set_left_leds(GPIO_PinState state);
-void set_right_leds(GPIO_PinState state);
-/* USER CODE BEGIN PFP */
-
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
