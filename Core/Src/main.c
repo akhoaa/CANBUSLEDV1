@@ -94,6 +94,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+void toggle_left_leds(void);
+void toggle_right_leds(void);
+void toggle_all_leds(void);
+void set_left_leds(GPIO_PinState state);
+void set_right_leds(GPIO_PinState state);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
